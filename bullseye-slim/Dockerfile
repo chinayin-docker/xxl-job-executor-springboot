@@ -12,7 +12,7 @@ ENV XXL_GIT_TAG 2.3.0
 
 RUN set -eux \
     ## install packages
-    && install_packages git tree \
+    && install_packages git file \
     && mkdir /app
 
 WORKDIR /app
