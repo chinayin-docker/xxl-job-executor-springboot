@@ -5,10 +5,10 @@
 #--------------------------------------------------------------------------
 #
 
-FROM chinayin/maven:3-jdk-8-bullseye-slim AS builder
+FROM chinayin/maven:3-jdk-8 AS builder
 
-ENV XXL_VERSION 2.3.0
-ENV XXL_GIT_TAG 2.3.0
+ENV XXL_VERSION 2.3.1
+ENV XXL_GIT_TAG 2.3.1
 
 RUN set -eux \
     ## install packages
@@ -21,7 +21,7 @@ RUN set -eux \
     && git clone https://github.com/xuxueli/xxl-job.git -b ${XXL_GIT_TAG} . \
     && mvn -B package --file pom.xml
 
-FROM chinayin/openjdk:8-jre-bullseye-slim
+FROM chinayin/openjdk:8-jre
 
 ENV TZ=PRC
 
