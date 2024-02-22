@@ -7,8 +7,8 @@
 
 FROM chinayin/maven:3-jdk-8 AS builder
 
-ENV XXL_VERSION 2.3.1
-ENV XXL_GIT_TAG 2.3.1
+ENV XXL_VERSION 2.4.0
+ENV XXL_GIT_TAG 2.4.0
 
 RUN set -eux \
     ## install packages
