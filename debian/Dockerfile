@@ -7,15 +7,15 @@
 
 FROM chinayin/maven:3-jdk-8 AS builder
 
-ENV XXL_VERSION 2.4.0
-ENV XXL_GIT_TAG 2.4.0
-
+COPY prebuildfs /
 RUN set -eux \
     ## install packages
     && install_packages git file \
     && mkdir /app
-
 WORKDIR /app
+
+ENV XXL_VERSION 2.4.0
+ENV XXL_GIT_TAG 2.4.0
 
 RUN set -eux \
     && git clone https://github.com/xuxueli/xxl-job.git -b ${XXL_GIT_TAG} . \
